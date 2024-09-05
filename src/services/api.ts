@@ -1,22 +1,22 @@
 import axios from "axios";
-import { Candidates } from "../@types/candidate";
+import { Candidate } from "../@types/candidate";
 
 export const httpClient = axios.create({
   baseURL: "https://divulgacandcontas.tse.jus.br/divulga/rest/v1",
 });
 
-export const getMayors = async (cityId: string): Promise<Candidates[]> => {
+export const getMayors = async (cityId: string): Promise<Candidate[]> => {
   const response = await httpClient.get(
     `/candidatura/listar/2024/${cityId}/2045202024/11/candidatos`
   );
-  return response.data;
+  return response.data.candidatos;
 };
 
-export const getCouncilors = async (cityId: string): Promise<Candidates[]> => {
+export const getCouncilors = async (cityId: string): Promise<Candidate[]> => {
   const response = await httpClient.get(
     `/candidatura/listar/2024/${cityId}/2045202024/13/candidatos`
   );
-  return response.data;
+  return response.data.candidatos;
 };
 
 export const getCandidateData = async (cityId: string, candidateId: string) => {

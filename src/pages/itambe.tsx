@@ -51,7 +51,7 @@ export default function ItambePage() {
           <h3 className="font-semibold text-xl">Prefeito</h3>
           <div className="mt-4 w-full grid grid-cols-2 gap-4 max-md:grid-cols-1">
             {mayors?.map((candidate) => (
-              <CandidateCard data={candidate} />
+              <CandidateCard data={candidate!} />
             ))}
           </div>
         </section>
@@ -60,7 +60,7 @@ export default function ItambePage() {
           <h3 className="font-semibold text-xl">Vereadores</h3>
           <div className="mt-4 w-full grid grid-cols-2 gap-4 max-md:grid-cols-1">
             {councilors?.map((candidate) => (
-              <CandidateCard data={candidate} />
+              <CandidateCard data={candidate!} />
             ))}
           </div>
         </section>
